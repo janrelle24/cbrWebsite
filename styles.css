@@ -14,7 +14,7 @@ body{
     flex-direction: column;  /* stack items vertically */
     justify-content: center; /* center vertically inside header */
     align-items: center; /* center horizontally */
-    position: fixed;
+    position: absolute;
     background: white;
     top: 0;
     left: 0;
@@ -32,4 +32,35 @@ body{
 .title, .sub-title{
     
     text-align: center;
+}
+.menu{
+    background-color: #ed0524;
+    overflow: auto;
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the links horizontally */
+    padding: 10px 0; /* Add some padding for better spacing */
+    margin-top: 300px;
+}
+
+.menu a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Add spacing around links */
+    margin: 0 5px; /* Add spacing between links */
+    font-size: 20px; /* Adjust font size */
+}
+.menu a:hover{
+    color: black;
+    background-color: bisque;
+    border-radius: 5px; /* Slightly increase the border radius for smoother corners */
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for a lifted effect */
+    transform: scale(1.05); /* Slightly enlarge the link on hover */
+}
+.active{
+    background-color: bisque;
+    color: black;
+    border-radius: 5px;
 }
