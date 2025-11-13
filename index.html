@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBR Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="images/sp.ico">
 </head>
@@ -23,42 +24,67 @@
         <a href="#events">EVENTS</a>
     </div>
     <div class="news-container">
-        <div class="carosel">
+        <div id="carosel" class="carosel">
             <!-- Slide 1 -->
             <div class="slide fade">
                 <div class="img-side">
-                    <img src="images/empty.png" alt="">
+                    <img src="images/android.jpg" alt="">
                 </div>
                 <div class="content">
                     <h3 class="script-title">CITY ORDINACE UPDATES</h3>
                     <p class="date"><i>2025-11-13</i></p>
                     <p class="script">The City of Cabadbaran recently passed new environmental initiatives promoting sustainable waste management.</p>
                     <button class="read-btn">Read More</button>
+                    <div class="btn">
+                        <div id="prev" class="btn-icon prev" title="previous button">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </div>
+                        <div id="next" class="btn-icon next" title="next button">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!--
+            <!-- Slide 2 -->
             <div class="slide fade">
                 <div class="img-side">
-                    <img src="images/empty.png" alt="">
+                    <img src="images/guko.jpg" alt="">
                 </div>
                 <div class="content">
-                    <h3>Upcoming Festival</h3>
-                    <p>Join us for the annual Cabadbaran Cultural Festival showcasing local talent and traditions.</p>
+                    <h3 class="script-title">Upcoming Festival</h3>
+                    <p class="date"><i>2025-11-9</i></p>
+                    <p class="script">Join us for the annual Cabadbaran Cultural Festival showcasing local talent and traditions.</p>
+                    <button class="read-btn">Read More</button>
+                    <div class="btn">
+                        <div id="prev" class="btn-icon prev" title="previous button">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </div>
+                        <div id="next" class="btn-icon next" title="next button">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            
+            <!-- Slide 3 -->
             <div class="slide fade">
                 <div class="img-side">
-                    <img src="images/empty.png" alt="">
+                    <img src="images/trunks.jpg" alt="">
                 </div>
                 <div class="content">
-                    <h3>Community News</h3>
-                    <p>Stay up to date with the latest ordinances, events, and announcements from the City of Cabadbaran.</p>
+                    <h3 class="script-title">Community News</h3>
+                    <p class="date"><i>2025-11-11</i></p>
+                    <p class="script">Stay up to date with the latest ordinances, events, and announcements from the City of Cabadbaran.</p>
+                    <button class="read-btn">Read More</button>
+                    <div class="btn">
+                        <div id="prev" class="btn-icon prev" title="previous button">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </div>
+                        <div id="next" class="btn-icon next" title="next button">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="prev">❮</button>
-            <button class="next">❯</button>  -->
         </div>
     </div>
     <script src="script.js"></script>

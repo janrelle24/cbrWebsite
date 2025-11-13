@@ -128,7 +128,7 @@ body {
     justify-content: flex-start;
     box-sizing: border-box;
     padding-top: 50px;
-    
+    position: relative;
 }
 .script-title{
     font-size: 28px;
@@ -136,6 +136,11 @@ body {
     color: white;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+.date{
+    font-style: italic;
+    font-size: 20px;
+    color: white;
 }
 .script{
     font-size: 16px;
@@ -169,40 +174,35 @@ body {
 .read-btn:active {
     transform: scale(0.98);          /* Subtle press effect */
 }
-/*
-
-.prev, .next {
+/*prev & next btn*/
+.btn{
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    font-size: 24px;
-    border: none;
-    padding: 10px 16px;
-    cursor: pointer;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 8px;
+}
+.btn-icon{
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    user-select: none;
+    display: flex;
+    font-size: 1.4rem;
+    background-color: #5c5e5d;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
-
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+.btn-icon:active{
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
-
-.prev {
-    left: 10px;
+.prev, .next{
+    color: white;
+    
 }
-
-.next {
-    right: 10px;
+.prev:hover, .next:hover{
+    background: #e8edeb;
+    color: black;
 }
-
-
-@keyframes fadeEffect {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-
-
-*/
