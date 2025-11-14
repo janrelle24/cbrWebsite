@@ -46,6 +46,15 @@ document.addEventListener("DOMContentLoaded", () =>{
         monthYear.textContent = `${months[month]} ${year}`;
 
         daysContainer.innerHTML = '';
+        //previous month's dates
+        
+        const prevMonthsLastDay = new Date(year, month, 0).getDate();
+        for(let i = firstDay; i > 0; i--){
+            const dayDiv = document.createElement('div');
+            dayDiv.textContent = prevMonthsLastDay - i + 1;
+            dayDiv.classList.add('fade');
+            daysContainer.appendChild(dayDiv);
+        }
         //current months date
         for(let i = 1; i <= lastDay; i++){
             const dayDiv = document.createElement('div');
@@ -53,6 +62,14 @@ document.addEventListener("DOMContentLoaded", () =>{
             if(i === today.getDate() && month === today.getMonth() && year === today.getFullYear()){
                 dayDiv.classList.add('today');
             }
+            daysContainer.appendChild(dayDiv);
+        }
+        //next months date
+        const nextMonthStartDay = 7 - new Date(year, month + 1, 0).getDay() - 1;
+        for(let i = 1; i <= nextMonthStartDay; i++){
+            const dayDiv = document.createElement('div');
+            dayDiv.textContent = i;
+            dayDiv.classList.add('fade');
             daysContainer.appendChild(dayDiv);
         }
     }

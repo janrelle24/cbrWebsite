@@ -240,7 +240,7 @@ body {
     border: none;
 }
 /*end video container*/
-/*start metting container*/
+/*start meeting container*/
 .meetings{
     width: 30%;
     padding: 20px;
@@ -257,6 +257,7 @@ body {
     padding-bottom: 10px;
     letter-spacing: .2px;
     font-weight: 600;
+    margin-left: 120px;
 }
 .calendar{
     border: 1px solid black;
@@ -268,6 +269,7 @@ body {
     padding: 20px;
     height: 100%;
     width: 90%;
+    
 }
 .head{
     display: flex;
@@ -310,4 +312,8 @@ body {
     background-color: #ba3c06;
     color: white;
 }
-/*end metting container*/
+.days .fade{
+    color: #8c8a89;
+    
+}
+/*end meeting container*/
