@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", () =>{
 document.addEventListener("DOMContentLoaded", () =>{
     const monthYear = document.getElementById("month-year");
     const daysContainer = document.getElementById("days");
+    const leftBtn = document.getElementById("angle-left");
+    const rightBtn = document.getElementById("angle-right");
+    const calPrevYear = document.getElementById("cal-prev");
+    const calNextYear = document.getElementById("cal-next");
 
     const months = [
         'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 
@@ -73,5 +77,24 @@ document.addEventListener("DOMContentLoaded", () =>{
             daysContainer.appendChild(dayDiv);
         }
     }
+    /**previous & next btn for month */
+    leftBtn.addEventListener('click', function (){
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar(currentDate);
+    });
+    rightBtn.addEventListener('click', function (){
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar(currentDate);
+    });
+    /**previous & next btn for years */
+    calPrevYear.addEventListener('click', function(){
+        currentDate.setFullYear(currentDate.getFullYear() - 1);
+        renderCalendar(currentDate);
+    });
+    calNextYear.addEventListener('click', function(){
+        currentDate.setFullYear(currentDate.getFullYear() + 1);
+        renderCalendar(currentDate);
+    });
+
     renderCalendar(currentDate);
 });

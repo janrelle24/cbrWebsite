@@ -300,6 +300,7 @@ body {
 .days div{
     cursor: pointer;
 }
+
 .days div:hover{
     background-color: #2e2d2d;
     color: white;
@@ -314,6 +315,6 @@ body {
 }
 .days .fade{
     color: #8c8a89;
-    
+
 }
 /*end meeting container*/
