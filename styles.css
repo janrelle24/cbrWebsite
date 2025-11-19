@@ -440,19 +440,35 @@ body {
 }
 /*end ordinance*/
 /*start members*/
+.member-text{
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 5px solid red;
+    width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    letter-spacing: .2px;
+    margin-bottom: 20px;
+}
 .members{
+    background-color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.member-wrapper{
+    
     display: flex;
     /*justify-content: center;*/
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
     /*overflow: auto;*/
-    padding: 20px 0;
-    background-color: white;
     overflow-x: auto;          /* enables horizontal scroll */
     scroll-behavior: smooth;   /* smooth scroll effect */
     white-space: nowrap;
     scrollbar-width: thin;
+    padding: 10px 20px;
 }
 .member-card{
     position: relative;
