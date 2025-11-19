@@ -98,3 +98,47 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     renderCalendar(currentDate);
 });
+
+document.addEventListener("DOMContentLoaded", () =>{
+    let ordSlideIndex = 0;
+    const ordSlides = document.querySelectorAll(".ordinance-grid .ordinance-slide");
+    const ordPrevBtn = document.getElementById("ord-prev");
+    const ordNextBtn = document.getElementById("ord-next");
+    const slidesPerView = 3; //show 3 slides at once;
+
+    function showOrdSlide(index){
+        ordSlides.forEach((slide, i) =>{
+            //show 3 slide per set
+            //slide.style.display = i === index ? "block" : "none";
+            if (i >= index && i < index + slidesPerView) {
+                slide.style.display = "block";
+            } else {
+                slide.style.display = "none";
+            }
+        });
+    }
+    //move forward by 1
+    function nextOrdSlide(){
+        ordSlideIndex++;
+        if(ordSlideIndex > ordSlides.length - slidesPerView){
+            ordSlideIndex = 0;
+        }
+        showOrdSlide(ordSlideIndex);
+    }
+    function prevOrdSlide(){
+        ordSlideIndex--;
+        if(ordSlideIndex < 0){
+            ordSlideIndex = ordSlides.length - slidesPerView;
+        }
+        
+        showOrdSlide(ordSlideIndex);
+    }
+    //add event listener
+    ordNextBtn.addEventListener("click", nextOrdSlide);
+    ordPrevBtn.addEventListener("click", prevOrdSlide);
+
+    // Auto slide every 5 seconds
+    showOrdSlide(ordSlideIndex);
+    setInterval(nextOrdSlide, 5000);
+    
+});

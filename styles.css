@@ -347,8 +347,10 @@ body {
 .ordinance-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    padding: 10px;
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+    justify-items: center;
 }
 .carosel-ordinance{
     /*position: relative;*/
@@ -358,11 +360,11 @@ body {
 }
 .cards{
     background: #f5f5f5;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #dcdcdc;
     text-align: justify;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 350px;
     word-spacing: 1px;
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
@@ -405,5 +407,35 @@ body {
 .ordinance-btn:hover{
     background: #545451;
 }
-
+/* next & prev btn*/
+.ordinanceBtn{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    margin-top:  -22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 50%;
+    user-select: none;
+}
+.ordinanceBtn:hover{
+    background: red;
+    color: white;
+    transform: translateY(-50%) scale(1.12);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.ord-prev{
+    left: 10px;
+}
+.ord-next{
+    right: 10px;
+}
 /*end ordinance*/
