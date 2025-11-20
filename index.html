@@ -9,257 +9,231 @@
     <link rel="icon" type="image/x-icon" href="images/sp.ico">
 </head>
 <body>
-    <header class="header">
-        <div>
-            <img src="images/sp.ico" alt="City of Cabadbaran Logo">
-            <h1 class="title">City <i>of</i> Cabadbaran</h1>
-            <h2 class="sub-title">Sangguniang Panglungsod Office</h2>
-        </div>
-    </header>
-    <nav class="menu">
-        <a class="active" href="#home">HOME</a>
-        <a href="#sp_members">SP MEMBERS</a>
-        <a href="#ordinaces">ORDINANCES</a>
-        <a href="#news">NEWS</a>
-        <a href="#events">EVENTS</a>
-    </nav>
-    <section class="news-container">
-        <div id="carosel" class="carosel">
-            <!-- Slide 1 -->
-            <div class="slide fade">
-                <div class="img-side">
-                    <img src="images/android.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3 class="script-title">CITY ORDINACE UPDATES</h3>
-                    <p class="date"><i>2025-11-13</i></p>
-                    <p class="script">The City of Cabadbaran recently passed new environmental initiatives promoting sustainable waste management.</p>
-                    <button class="read-btn">Read More</button>
-                    <div class="btn">
-                        <div id="prev" class="btn-icon prev" title="previous button">
-                            <i class="fa-solid fa-arrow-left"></i>
+    <!--header.html-->
+    <div id="header-placeholder"></div>
+    <!--nav.html-->
+    <div id="nav-placeholder"></div>
+    <main>
+        <section class="news-container">
+            <div id="carosel" class="carosel">
+                <!-- Slide 1 -->
+                <div class="slide fade">
+                    <div class="img-side">
+                        <img src="images/android.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="script-title">CITY ORDINACE UPDATES</h3>
+                        <p class="date"><i>2025-11-13</i></p>
+                        <p class="script">The City of Cabadbaran recently passed new environmental initiatives promoting sustainable waste management.</p>
+                        <button class="read-btn">Read More</button>
+                        <div class="btn">
+                            <div id="prev" class="btn-icon prev" title="previous button">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </div>
+                            <div id="next" class="btn-icon next" title="next button">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
                         </div>
-                        <div id="next" class="btn-icon next" title="next button">
-                            <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide fade">
+                    <div class="img-side">
+                        <img src="images/guko.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="script-title">Upcoming Festival</h3>
+                        <p class="date"><i>2025-11-9</i></p>
+                        <p class="script">Join us for the annual Cabadbaran Cultural Festival showcasing local talent and traditions.</p>
+                        <button class="read-btn">Read More</button>
+                        <div class="btn">
+                            <div id="prev" class="btn-icon prev" title="previous button">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </div>
+                            <div id="next" class="btn-icon next" title="next button">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide fade">
+                    <div class="img-side">
+                        <img src="images/trunks.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="script-title">Community News</h3>
+                        <p class="date"><i>2025-11-11</i></p>
+                        <p class="script">Stay up to date with the latest ordinances, events, and announcements from the City of Cabadbaran.</p>
+                        <button class="read-btn">Read More</button>
+                        <div class="btn">
+                            <div id="prev" class="btn-icon prev" title="previous button">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </div>
+                            <div id="next" class="btn-icon next" title="next button">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Slide 2 -->
-            <div class="slide fade">
-                <div class="img-side">
-                    <img src="images/guko.jpg" alt="">
+        </section>
+        <aside class="meetings">
+            <h3 class="calendar-text">CALENDAR</h3>
+            <div class="calendar">
+                <div class="head">
+                    <div id="cal-prev" class="cal-btn">
+                        <i class="fa-solid fa-angles-left"></i>
+                    </div>
+                    <div id="angle-left" class="cal-btn">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </div>
+                    <div id="month-year"></div>
+                    <div id="angle-right" class="cal-btn">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div id="cal-next" class="cal-btn">
+                        <i class="fa-solid fa-angles-right"></i>
+                    </div>
                 </div>
-                <div class="content">
-                    <h3 class="script-title">Upcoming Festival</h3>
-                    <p class="date"><i>2025-11-9</i></p>
-                    <p class="script">Join us for the annual Cabadbaran Cultural Festival showcasing local talent and traditions.</p>
-                    <button class="read-btn">Read More</button>
-                    <div class="btn">
-                        <div id="prev" class="btn-icon prev" title="previous button">
-                            <i class="fa-solid fa-arrow-left"></i>
+                <div class="weekdays">
+                    <div>SUN</div>
+                    <div>MON</div>
+                    <div>THU</div>
+                    <div>WED</div>
+                    <div>THU</div>
+                    <div>FRI</div>
+                    <div>SAT</div>
+                </div>
+                <div class="days" id="days"></div>
+            </div>
+        </aside>
+        <section class="live">
+            <h3 class="live-text">LIVE STREAM</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/6SBlLMnvonQ?&list=RD6SBlLMnvonQ&autoplay=1&mute=1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        <!--
+        <aside class="meetings">
+            <h3>Calendar</h3>
+        </aside>-->
+        <article class="ordinance">
+            <h3 class="ordinance-text">ORDINACES</h3>
+            <div id="carosel-ordinance" class="carosel-ordinance">
+                <div class="ordinance-grid">
+                    <div class="ordinance-slide">
+                        <div class="cards">
+                            <h4 class="ordinance-title">Lorem Ipsum</h4>
+                            <p class="ordinace-date">2025-02-15</p>
+                            <p class="ordinance-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod risus id tortor aliquet, id tincidunt quam luctus.
+                                Integer nec varius lectus. Nulla facilisi. Vivamus tempor, purus ac accumsan feugiat, lacus tortor interdum mi, vel varius libero justo et risus. Donec vitae ante vel lacus faucibus imperdiet.
+                                Suspendisse potenti. Phasellus ut augue a eros gravida ultricies vitae id magna. Mauris rutrum purus at risus varius, quis cursus lorem ultricies. Cras ac ullamcorper lectus, sit amet pretium odio.
+                            </p>
+                            <button class="ordinance-btn">Read More</button>
                         </div>
-                        <div id="next" class="btn-icon next" title="next button">
-                            <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="ordinance-slide">
+                        <div class="cards">
+                            <h3 class="ordinance-title">Lorem Ipsum</h3>
+                            <p class="ordinace-date">2025-11-17</p>
+                            <p class="ordinance-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod risus id tortor aliquet, id tincidunt quam luctus.
+                                Integer nec varius lectus. Nulla facilisi. Vivamus tempor, purus ac accumsan feugiat, lacus tortor interdum mi, vel varius libero justo et risus. Donec vitae ante vel lacus faucibus imperdiet.</p>
+                            <button class="ordinance-btn">Read More</button>
+                        </div>
+                    </div>
+                    <div class="ordinance-slide">
+                        <div class="cards">
+                            <h3 class="ordinance-title">Lorem Ipsum</h3>
+                            <p class="ordinace-date">2025-09-29</p>
+                            <p class="ordinance-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
+                                Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
+                            <button class="ordinance-btn">Read More</button>
+                        </div>
+                    </div>
+                    <div class="ordinance-slide">
+                        <div class="cards">
+                            <h3 class="ordinance-title">Lorem Ipsum</h3>
+                            <p class="ordinace-date">2025-08-29</p>
+                            <p class="ordinance-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
+                                Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
+                            <button class="ordinance-btn">Read More</button>
+                        </div>
+                    </div>
+                    <div class="ordinance-slide">
+                        <div class="cards">
+                            <h3 class="ordinance-title">Lorem Ipsum</h3>
+                            <p class="ordinace-date">2024-07-29</p>
+                            <p class="ordinance-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
+                                Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
+                            <button class="ordinance-btn">Read More</button>
+                        </div>
+                    </div>
+                    <div class="ordinance-slide">
+                        <div class="cards">
+                            <h3 class="ordinance-title">Lorem Ipsum</h3>
+                            <p class="ordinace-date">2024-07-30</p>
+                            <p class="ordinance-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
+                                Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
+                            <button class="ordinance-btn">Read More</button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="slide fade">
-                <div class="img-side">
-                    <img src="images/trunks.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3 class="script-title">Community News</h3>
-                    <p class="date"><i>2025-11-11</i></p>
-                    <p class="script">Stay up to date with the latest ordinances, events, and announcements from the City of Cabadbaran.</p>
-                    <button class="read-btn">Read More</button>
-                    <div class="btn">
-                        <div id="prev" class="btn-icon prev" title="previous button">
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </div>
-                        <div id="next" class="btn-icon next" title="next button">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <aside class="meetings">
-        <h3 class="calendar-text">CALENDAR</h3>
-        <div class="calendar">
-            <div class="head">
-                <div id="cal-prev" class="cal-btn">
-                    <i class="fa-solid fa-angles-left"></i>
-                </div>
-                <div id="angle-left" class="cal-btn">
+                <div class="ordinanceBtn ord-prev" id="ord-prev">
                     <i class="fa-solid fa-angle-left"></i>
                 </div>
-                <div id="month-year"></div>
-                <div id="angle-right" class="cal-btn">
+                <div class="ordinanceBtn ord-next" id="ord-next">
                     <i class="fa-solid fa-angle-right"></i>
                 </div>
-                <div id="cal-next" class="cal-btn">
-                    <i class="fa-solid fa-angles-right"></i>
+                
+            </div>
+        </article>
+        <section class="members">
+            <h3 class="member-text">SANGGUNIANG PANGLUNGSOD OFFICIALS</h3>
+            <div class="member-wrapper">
+                <div class="member-card">
+                    <img src="images/cbrOfficials.jpg" alt="SP Members">
+                    <div class="member-desc">SP Members</div>
+                </div>
+                <div class="member-card">
+                    <img src="images/cbrMayor.jpg" alt="cabadbaran city mayor">
+                    <div class="member-desc">Cabadbaran City Mayor</div>
+                </div>
+                <div class="member-card">
+                    <img src="images/cbrBuilding.jpg" alt="cabadbaran city hall building">
+                    <div class="member-desc">SP Building</div>
                 </div>
             </div>
-            <div class="weekdays">
-                <div>SUN</div>
-                <div>MON</div>
-                <div>THU</div>
-                <div>WED</div>
-                <div>THU</div>
-                <div>FRI</div>
-                <div>SAT</div>
-            </div>
-            <div class="days" id="days"></div>
-        </div>
-    </aside>
-    <section class="live">
-        <h3 class="live-text">LIVE STREAM</h2>
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/6SBlLMnvonQ?&list=RD6SBlLMnvonQ&autoplay=1&mute=1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-        </div>
-    </section>
-    <!--
-    <aside class="meetings">
-        <h3>Calendar</h3>
-    </aside>-->
-    <article class="ordinance">
-        <h3 class="ordinance-text">ORDINACES</h3>
-        <div id="carosel-ordinance" class="carosel-ordinance">
-            <div class="ordinance-grid">
-                <div class="ordinance-slide">
-                    <div class="cards">
-                        <h4 class="ordinance-title">Lorem Ipsum</h4>
-                        <p class="ordinace-date">2025-02-15</p>
-                        <p class="ordinance-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod risus id tortor aliquet, id tincidunt quam luctus.
-                            Integer nec varius lectus. Nulla facilisi. Vivamus tempor, purus ac accumsan feugiat, lacus tortor interdum mi, vel varius libero justo et risus. Donec vitae ante vel lacus faucibus imperdiet.
-                            Suspendisse potenti. Phasellus ut augue a eros gravida ultricies vitae id magna. Mauris rutrum purus at risus varius, quis cursus lorem ultricies. Cras ac ullamcorper lectus, sit amet pretium odio.
-                        </p>
-                        <button class="ordinance-btn">Read More</button>
-                    </div>
+        </section>
+        <section class="map">
+            <h3 class="map-text">SANGGUNIANG PANGLUNGSOD OFFICE</h3>
+            <div class="map-wrapper">
+                <div class="box">
+                    <h4>Our Location</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum.
+                        Sed vulputate augue in sapien convallis interdum.
+                        Pellentesque ac urna eget felis viverra convallis.
+                        Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.
+                    </p>
                 </div>
-                <div class="ordinance-slide">
-                    <div class="cards">
-                        <h3 class="ordinance-title">Lorem Ipsum</h3>
-                        <p class="ordinace-date">2025-11-17</p>
-                        <p class="ordinance-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod risus id tortor aliquet, id tincidunt quam luctus.
-                            Integer nec varius lectus. Nulla facilisi. Vivamus tempor, purus ac accumsan feugiat, lacus tortor interdum mi, vel varius libero justo et risus. Donec vitae ante vel lacus faucibus imperdiet.</p>
-                        <button class="ordinance-btn">Read More</button>
-                    </div>
-                </div>
-                <div class="ordinance-slide">
-                    <div class="cards">
-                        <h3 class="ordinance-title">Lorem Ipsum</h3>
-                        <p class="ordinace-date">2025-09-29</p>
-                        <p class="ordinance-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
-                            Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
-                        <button class="ordinance-btn">Read More</button>
-                    </div>
-                </div>
-                <div class="ordinance-slide">
-                    <div class="cards">
-                        <h3 class="ordinance-title">Lorem Ipsum</h3>
-                        <p class="ordinace-date">2025-08-29</p>
-                        <p class="ordinance-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
-                            Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
-                        <button class="ordinance-btn">Read More</button>
-                    </div>
-                </div>
-                <div class="ordinance-slide">
-                    <div class="cards">
-                        <h3 class="ordinance-title">Lorem Ipsum</h3>
-                        <p class="ordinace-date">2024-07-29</p>
-                        <p class="ordinance-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
-                            Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
-                        <button class="ordinance-btn">Read More</button>
-                    </div>
-                </div>
-                <div class="ordinance-slide">
-                    <div class="cards">
-                        <h3 class="ordinance-title">Lorem Ipsum</h3>
-                        <p class="ordinace-date">2024-07-30</p>
-                        <p class="ordinance-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
-                            Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
-                        <button class="ordinance-btn">Read More</button>
-                    </div>
-                </div>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1969.6829554753388!2d125.54625226463145!3d9.12138398480053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301a2b4d983e727%3A0xf06f12ab93e595a4!2sCabadbaran%20City%2CSangguniang%20Panlungsod%20Office!5e0!3m2!1sen!2sph!4v1763537321259!5m2!1sen!2sph"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
-            <div class="ordinanceBtn ord-prev" id="ord-prev">
-                <i class="fa-solid fa-angle-left"></i>
-            </div>
-            <div class="ordinanceBtn ord-next" id="ord-next">
-                <i class="fa-solid fa-angle-right"></i>
-            </div>
-            
-        </div>
-    </article>
-    <section class="members">
-        <h3 class="member-text">SANGGUNIANG PANGLUNGSOD OFFICIALS</h3>
-        <div class="member-wrapper">
-            <div class="member-card">
-                <img src="images/cbrOfficials.jpg" alt="SP Members">
-                <div class="member-desc">SP Members</div>
-            </div>
-            <div class="member-card">
-                <img src="images/cbrMayor.jpg" alt="cabadbaran city mayor">
-                <div class="member-desc">Cabadbaran City Mayor</div>
-            </div>
-            <div class="member-card">
-                <img src="images/cbrBuilding.jpg" alt="cabadbaran city hall building">
-                <div class="member-desc">SP Building</div>
-            </div>
-        </div>
-    </section>
-    <section class="map">
-        <h3 class="map-text">SANGGUNIANG PANGLUNGSOD OFFICE</h3>
-        <div class="map-wrapper">
-            <div class="box">
-                <h4>Our Location</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum.
-                    Sed vulputate augue in sapien convallis interdum.
-                    Pellentesque ac urna eget felis viverra convallis.
-                    Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.
-                </p>
-            </div>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1969.6829554753388!2d125.54625226463145!3d9.12138398480053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301a2b4d983e727%3A0xf06f12ab93e595a4!2sCabadbaran%20City%2CSangguniang%20Panlungsod%20Office!5e0!3m2!1sen!2sph!4v1763537321259!5m2!1sen!2sph"
-                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="footer-content">
-            <h3>Contact Us</h3>
-            <p>Email: <a href="mailto:"a></a>
-            <p>Phone: <a href="tel:+639123456789">+63 912 345 6789</a></p>
-            <p>Website: <a href="https://www.cabadbaran.gov.ph" target="_blank">www.cabadbaran.gov.ph</a></p>
-            <p>Follow us on:</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/cabadbarancityofficial" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://twitter.com/cabadbarancity" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.instagram.com/cabadbarancity/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/c/cabadbarancityofficial" target="_blank"><i class="fa-brands fa-youtube"></i></i></a>
-            </div>
-            <p>Address: Sangguniang Panglungsod Office, Cabadbaran City, Philippines</p>
-            <div class="socials">
-            <p>&copy; 2025 City of Cabadbaran. All rights reserved.</p>
-            <p>Developer Name: Janrelle L. Lubiano</p>
-            <p>Contact: <a href="mailto:lubianojanrelle@gmail.com">lubianojanrelle@gmail.com</a></p>
-            
-        </div>
-    </footer>
-    <script src="script.js"></script>
+        </section>
+    </main>
+    <!--footer.html-->
+    <div id="footer-placeholder"></div>
+    <script src="common.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
