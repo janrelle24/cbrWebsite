@@ -12,12 +12,28 @@
     <div id="header-placeholder"></div>
     <!--nav.html-->
     <div id="nav-placeholder"></div>
-    <main>
-        <div>SP Members design here..</div>
+    <main class="sp_members_main">
+        <section class="officials">
+            <div class="member-officials">
+                <h2>SP Members and Mayor</h2>
+                <p>Here you can find the list of SP members and Mayor.</p>
+            </div>
+            <label class="option" for="members">Cabadbaran City Officials:</label>
+            <select name="members" id="members">
+                <option value="all">All Officials</option>
+                <option value="City Mayor">Mayor</option>
+                <option value="Vice Mayor">Vice Mayor</option>
+                <option value="City Counsilor">Counselor</option>
+                <option value="Liga ng Barangay President">President of Liga ng Barangay</option>
+                <option value="SK Chairperson President">SK Chairperson President</option>
+                <option value="IP Group Representative">Indigenous Group Representative</option>
+            </select>
+            <div class="member-cards-container" id="member-cards"></div>
+        </section>
     </main>
     <!--footer.html-->
     <div id="footer-placeholder"></div>
     <script src="common.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="sp_members.js"></script>
 </body>
 </html>
