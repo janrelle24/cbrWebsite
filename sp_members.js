@@ -24,7 +24,7 @@ let counselors = {
     ]
 };
 
-const memberCardsContainer = document.getElementById('member-cards');
+const memberCardsContainer = document.getElementById('sp_member-cards');
 
 function renderMembers(position = 'all'){
     memberCardsContainer.innerHTML = '';
@@ -35,7 +35,7 @@ function renderMembers(position = 'all'){
 
     filteredMembers.forEach(member => {
         const memberCard = document.createElement('div');
-        memberCard.classList.add("member-cards");
+        memberCard.classList.add("sp_member-cards");
 
         memberCard.innerHTML = `
             <div class="member-image">
@@ -55,7 +55,7 @@ function renderMembers(position = 'all'){
 }
 renderMembers();
 
-document.getElementById('members').addEventListener('change', function() {
+document.getElementById('sp_members').addEventListener('change', function() {
     const selectedPosition = this.value;
     renderMembers(selectedPosition);
 });

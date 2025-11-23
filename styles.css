@@ -655,23 +655,7 @@ iframe:hover{
 /*end footer*/
 
 /*start sp_member design*/
-/*
-.sp_members_main{
-    padding: 20px;
-    background-color: #f7f8fa;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.member-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 400px;
-}*/
+
 .officials{
     max-width: 1200px;
     margin: 40px auto;
@@ -707,7 +691,7 @@ iframe:hover{
     color: #333;
     font-size: 1.1rem;
 }
-#members {
+#sp_members {
     display: block;
     margin: 0 auto 30px;
     padding: 10px 15px;
@@ -718,7 +702,7 @@ iframe:hover{
     cursor: pointer;
     transition: all 0.2s ease;
 }
-#members:hover {
+#sp_members:hover {
     border-color: #c62828;
 }
 /* Cards container */
@@ -730,7 +714,7 @@ iframe:hover{
     align-items: stretch;
 }
 /* Each member card */
-.member-card {
+.sp_member-cards {
     background-color: #fafafa;
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
@@ -740,7 +724,7 @@ iframe:hover{
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.member-card:hover {
+.sp_member-cards:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
