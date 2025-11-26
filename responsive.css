@@ -147,4 +147,181 @@
         padding-top: 12px;
         margin-top: 20px;
     }
+
+    /* start sp_member responsive*/
+    .officials{
+        max-width: 95%;
+        padding: 20px 15px;
+        margin: 30px auto;
+    }
+    /* Header */
+    .member-officials h2{
+        font-size: 1.5rem;
+    }
+    .member-officials p{
+        font-size: 0.95rem;
+    }
+    /*dropdown*/
+    .option{
+        font-size: 1rem;
+    }
+    #sp_members{
+        width: 90%;
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+    .member-cards-container{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 18px;
+    }
+    /* Card */
+    .sp_member-cards{
+        max-width: 320px;
+    }
+    /* Image */
+    .member-image{
+        width: 220px;
+        margin: 0 auto;
+    }
+    .member-image img{
+        object-fit: cover;
+    }
+    /* Info */
+    .member-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .member-info .position {
+        font-size: 0.95rem;
+    }
+
+    .member-info p {
+        font-size: 0.9rem;
+    }
+    /* start sp_member responsive*/
+    /*start main ordinance responsive*/
+    .main-ordinance{
+        padding: 20px;
+        margin: 15px auto;
+    }
+    /* Search Bar */
+    .search-ordinance{
+        width: 100%;
+        justify-content: center;
+        float: none;
+    }
+    .search-ordinance input{
+        width: 80%;
+        font: 15px;
+        max-width: 450px;
+        height: 32px;
+    }
+    .search-ordinance-btn{
+        height: 34px;
+        width: 40px;
+        font-size: 15px;
+    }
+    /* Ordinance List */
+    .ordinance-list {
+        padding: 25px;
+        gap: 20px;
+    }
+    /* Cards */
+    .ordinace-card{
+        padding: 20px;
+    }
+    .ordinace-card h3{
+        font-size: 1.3rem;
+    }
+    .ordinance-card > p:first-of-type {
+        font-size: 0.95rem;
+    }
+
+    .ordinance-card > p:nth-of-type(2) {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .ordinance-card button {
+        font-size: 0.95rem;
+        padding: 8px 18px;
+    }
+    /*end main ordinance responsive*/
+    /*start main news responsive*/
+    .main-news{
+        padding: 20px;
+        margin: 15px auto;
+    }
+    .search-news{
+        width: 100%;
+        justify-content: center;
+        float: none;
+    }
+    .search-news input{
+        width: 80%;
+        font: 15px;
+        max-width: 450px;
+        height: 32px;
+    }
+    .search-news-btn{
+        height: 34px;
+        width: 40px;
+        font-size: 15px;
+    }
+    .news-list{
+        padding: 25px;
+        gap: 20px;
+    }
+    .news-card{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    /* Image adjustments */
+    .news-image {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        margin-left: 0;
+    }
+    /* Content responsive */
+    .news-content {
+        width: 100%;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .news-content h3 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .news-content .news-date {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .news-content p {
+        max-height: 250px;   /* adjustable */
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+     /* But show scrollbar cleanly */
+    .news-content p::-webkit-scrollbar {
+        width: 6px;
+    }
+    .news-content p::-webkit-scrollbar-thumb {
+        background: #b3b3b3;
+        border-radius: 4px;
+    }
+    .news-content button {
+        font-size: 0.95rem;
+        padding: 9px 18px;
+        display: block;
+        margin: 0 auto;
+    }
+    /*
+    */
+    /*end main news responsive*/
 }
