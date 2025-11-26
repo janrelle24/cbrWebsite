@@ -324,4 +324,80 @@
     /*
     */
     /*end main news responsive*/
+    /*start main events responsive*/
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .main-events{
+        float: none;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .main-calendar{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+    .calendar-events{
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    /* Schedule section full width */
+    .schedule-events {
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    /* Adjust header layout */
+    .header-events {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        height: auto;
+        text-align: center;
+    }
+
+    .header-events p {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Schedule card responsive */
+    .schedule-container {
+        width: 100%;
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    .schedule-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    /* Agenda content should not overflow */
+    .agenda-content {
+        max-height: 300px; /* prevent too tall */
+        overflow-y: auto;
+    }
+
+    .agenda-content::-webkit-scrollbar {
+        width: 6px;
+    }
+    .agenda-content::-webkit-scrollbar-thumb {
+        background: #9b9b9b;
+        border-radius: 4px;
+    }
+    /*end main events responsive*/
 }
