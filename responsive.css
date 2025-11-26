@@ -1,0 +1,150 @@
+/*large screen desktop > 1200px*/
+@media (min-width: 1200px){
+    .ordinance-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*tablets (max-width: 1024px)*/
+/*header*/
+@media (max-width: 1024px){
+    
+    .header{
+        height: 250px;
+    }
+    .title{
+        font-size: 2.2rem;
+    }
+    .subtitle{
+        font-size: 1.4rem;
+    }
+    /*menu*/
+    .menu a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    /*carosel*/
+    .slide{
+        flex-direction: column;
+        height: auto;
+    }
+    .img-side, .content{
+        flex: 0 0 100%;
+        height: auto;
+    }
+    .img-side img{
+        height: 50vh;
+        
+    }
+    .content{
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+    }
+    .script-title{
+        font-size: 1.8rem;
+
+    }
+    .read-btn {
+        margin-top: 30px;
+    }
+    .btn{
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-right: 500px;
+    }
+    /* Calendar + Live Stream */
+    .meetings{
+        width: 80%;
+        float: none;
+        margin: 20px auto;
+    }
+    .calendar {
+        width: 100%;
+    }
+    .calendar-text{
+        margin: 20px auto;
+        font-size: 1.5rem;
+    }
+    .live-text{
+        margin: 20px auto;
+        font-size: 1.5rem;
+    }
+    .video-container {
+        width: 100%;
+        height: 500px;
+        margin: 0 auto;
+    }
+    /* Ordinance */
+    .ordinance-text{
+        margin: 20px auto;
+        font-size: 1.5rem;
+    }
+    .ordinance{
+        height: auto;
+        width: 90%;
+        margin: 20px auto;
+    }
+    .ordinance-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .cards{
+        width: 100%;
+        height: auto;
+    }
+    /* Members */
+    .member-text{
+        margin: 20px auto;
+        font-size: 1.5rem;
+    }
+    .member-wrapper{
+        justify-content: center;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+    }
+    .member-card {
+        width: 250px;
+        height: 300px;
+    }
+    /* Map */
+    .map-text{
+        margin: 20px auto;
+        font-size: 1.5rem;
+    }
+    .map-wrapper {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    iframe {
+        width: 100%;
+        height: 300px;
+    }
+    /*footer*/
+    .footer{
+        padding: 30px 15px;
+    }
+    .footer h3{
+        margin: 20px auto;
+        font-size: 1.5rem;
+    }
+    .footer p{
+        font-size: 0.95rem;
+    }
+    .footer-content{
+        max-width: 700px;
+    }
+    /* Social Icons */
+    .social-icons a {
+        font-size: 1.3rem;
+        margin: 0 8px;
+    }
+
+    /* Bottom text */
+    .socials {
+        font-size: 0.85rem;
+        padding-top: 12px;
+        margin-top: 20px;
+    }
+}
