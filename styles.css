@@ -88,6 +88,7 @@ body {
 /*end nav*/
 /*start carosel*/
 .new-container{
+    
     display: flex;
     justify-content: center;
     align-items: center;

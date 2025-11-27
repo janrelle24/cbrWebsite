@@ -21,26 +21,30 @@
     /*menu*/
     .menu{
         margin: 0;
-        padding: 0;
-        width: 250px;
+        /*padding: 0;*/
+        padding: 60px 0 0 0; /* Add space at the top for hamburger */
+        width: 350px;
         height: 100vh;
         position: fixed;
         top: 0;
-        right: -250px;
+        right: -350px;
         background-color: #ed0524;
         overflow-y: auto;
         transition: right 0.3s ease-in-out;
         z-index: 1000;
         flex-direction: column;
+        display: flex;
+        align-items: flex-start;   /* keep links aligned to left */
+        justify-content: flex-start; /* ensure links start at top */
     }
     .menu a {
+        
+        margin: 10px;
         display: block;
         color: white;
         text-decoration: none;
-        padding: 16px 20px;
-        font-size: 16px;
         padding: 8px 12px;
-        font-size: 1rem;
+        font-size: 1.5rem;
         border-bottom: 1px solid rgba(255,255,255,0.2);
     }
     .menu a:hover {
@@ -52,7 +56,8 @@
     }
     /* Hamburger Button */
     .hamburger {
-        position: fixed;
+        /*position: fixed;*/
+        position: absolute;
         top: 20px;
         right: 20px;
         font-size: 24px;
@@ -89,6 +94,9 @@
     /* Push main content when menu opens */
     
     /*carosel*/
+    .news-container{
+        padding-top: 200px;
+    }
     .slide{
         flex-direction: column;
         height: auto;
@@ -214,6 +222,9 @@
     }
 
     /* start sp_member responsive*/
+    .sp_members_main{
+        padding-top: 250px;
+    }
     .officials{
         max-width: 95%;
         padding: 20px 15px;
@@ -263,10 +274,11 @@
     .member-info p {
         font-size: 0.9rem;
     }
-    /* start sp_member responsive*/
+    /* end sp_member responsive*/
     /*start main ordinance responsive*/
     .main-ordinance{
-        padding: 20px;
+        padding-top: 300px;
+        /*padding: 20px;*/
         margin: 15px auto;
     }
     /* Search Bar */
@@ -314,7 +326,8 @@
     /*end main ordinance responsive*/
     /*start main news responsive*/
     .main-news{
-        padding: 20px;
+        padding-top: 300px;
+        /*padding: 20px;*/
         margin: 15px auto;
     }
     .search-news{
@@ -395,7 +408,8 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding: 0;
+        padding-top: 300px;
+        /*padding: 0;*/
         margin: 0;
     }
     .main-events{
