@@ -1,8 +1,38 @@
+
 <!--partials/nav.html-->
-<nav class="menu">
+<button class="hamburger" id="hamburger-btn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+<div class="overlay" id="overlay"></div>
+<nav class="menu" id="sidebar">
     <a class="nav-link" data-nav="index" href="index.html">HOME</a>
     <a class="nav-link" data-nav="sp_members" href="sp_members.html">SP MEMBERS</a>
     <a class="nav-link" data-nav="ordinances" href="ordinances.html">ORDINANCES</a>
     <a class="nav-link" data-nav="news" href="news.html">NEWS</a>
     <a class="nav-link" data-nav="events" href="events.html">EVENTS</a>
 </nav>
+<!--
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() =>{
+            const sidebar = document.getElementById("sidebar");
+            const hamburger = document.getElementById("hamburger-btn");
+            const overlay = document.getElementById("overlay");
+
+            if (hamburger && sidebar && overlay) {
+            hamburger.addEventListener("click", () => {
+                sidebar.classList.toggle("active");
+                overlay.classList.toggle("active");
+            });
+
+            overlay.addEventListener("click", () => {
+                sidebar.classList.remove("active");
+                overlay.classList.remove("active");
+            });
+            }
+        }, 500);
+    });
+</script>
+-->
+
+

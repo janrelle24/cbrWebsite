@@ -19,10 +19,75 @@
         font-size: 1.4rem;
     }
     /*menu*/
+    .menu{
+        margin: 0;
+        padding: 0;
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        background-color: #ed0524;
+        overflow-y: auto;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        flex-direction: column;
+    }
     .menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 16px 20px;
         font-size: 16px;
         padding: 8px 12px;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
     }
+    .menu a:hover {
+        background-color: #ed0524;
+    }
+    /* When sidebar is open */
+    .menu.active {
+        right: 0;
+    }
+    /* Hamburger Button */
+    .hamburger {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: #fff;
+        background-color: #ed0524;
+        border: none;
+        padding: 10px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+    /* Hide hamburger on large screens */
+    @media (min-width: 1025px) {
+    .hamburger {
+        display: none;
+        }
+    }
+    /* Dim background when sidebar is open (optional) */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 900;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    /* Push main content when menu opens */
+    
     /*carosel*/
     .slide{
         flex-direction: column;
@@ -400,4 +465,169 @@
         border-radius: 4px;
     }
     /*end main events responsive*/
+}
+
+@media (max-width: 768px){
+    .header{
+        height: 200px;
+    }
+    .header img{
+        width: 100px;
+    }
+    .title{
+        font-size: 1.8rem;
+    }
+    .sub-title{
+        font-size: 1.2rem;
+    }
+    /*menu*/
+    .menu{
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 0;
+    }
+    .menu a{
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        font-size: 14px;
+    }
+    /*carosel*/
+    .slide{
+        flex-direction: column;
+        text-align: center;
+    }
+    .img-side{
+        height: 250px;
+    }
+    .img-side img{
+        height: 40vh;
+    }
+    .content{
+        padding: 15px;
+        align-items: center;
+        text-align: center;
+    }
+    .script-title {
+        font-size: 1.4rem;
+    }
+    .script {
+        font-size: 0.95rem;
+    }
+    .read-btn {
+        font-size: 0.9rem;
+        width: 120px;
+        height: 40px;
+    }
+    .btn {
+        bottom: 20px;
+        gap: 1rem;
+        font-size: 14px;
+        margin-right: 250px;
+    }
+    /* Calendar Section */
+    .meetings {
+        width: 95%;
+        margin: 20px auto;
+        float: none;
+        padding: 10px;
+    }
+    .calendar {
+        width: 100%;
+        padding: 10px;
+    }
+    .calendar-text {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 0 auto 10px;
+    }
+    /* Live Stream */
+    .live {
+        padding: 15px;
+    }
+    .live-text {
+        font-size: 1.3rem;
+        margin: 15px auto;
+    }
+    .video-container {
+        width: 100%;
+        height: 250px;
+    }
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+    }
+    /* Ordinance */
+    .ordinance {
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+        height: auto;
+    }
+    .ordinance-text {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    .ordinance-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .cards {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+    /* Members */
+    .member-wrapper {
+        flex-direction: column;
+        overflow-x: hidden;
+        align-items: center;
+    }
+    .member-card {
+        width: 80%;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+    .member-desc {
+        font-size: 1.1rem;
+    }
+    /* Map */
+    .map-wrapper {
+        flex-direction: column;
+        gap: 2em;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+    iframe {
+        width: 100%;
+        height: 250px;
+    }
+    .box {
+        text-align: center;
+        padding: 10px;
+    }
+    .map .box p {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+    /* Footer */
+    .footer {
+        padding: 20px 10px;
+        font-size: 0.9rem;
+    }
+    .footer h3 {
+        font-size: 1.3rem;
+    }
+    .footer p {
+        font-size: 0.85rem;
+    }
+    .social-icons a {
+        font-size: 1.2rem;
+    }
+    .socials {
+        font-size: 0.8rem;
+    }
 }
