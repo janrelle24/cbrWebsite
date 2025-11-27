@@ -494,19 +494,65 @@
     .sub-title{
         font-size: 1.2rem;
     }
-    /*menu*/
+    /*sidebar menu*/
     .menu{
+        width: 250px;
+        right: -250px;
+        padding: 70px 0 0 0;
+        background-color: #ed0524;
         flex-direction: column;
-        align-items: center;
-        padding: 5px 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    .menu.active{
+        right: 0;
     }
     .menu a{
         display: block;
         width: 100%;
+        color: white;
+        text-decoration: none;
         text-align: center;
-        padding: 10px;
+        padding: 14px 20px;
         border-bottom: 1px solid rgba(255,255,255,0.3);
-        font-size: 14px;
+        font-size: 1.2rem;
+        margin: 5px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .menu a:hover {
+        background-color: #b1031a;
+    }
+    /* Hamburger button */
+    .hamburger {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 26px; /* slightly larger for mobile */
+        background-color: #ed0524;
+        color: #fff;
+        border: none;
+        padding: 12px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    /* Overlay for dimming background */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 900;
+    }
+
+    .overlay.active {
+        display: block;
     }
     /*carosel*/
     .slide{
@@ -643,5 +689,178 @@
     }
     .socials {
         font-size: 0.8rem;
+    }
+    /*sp_membeber main */
+    .sp_members_main{
+        padding-top: 200px;
+    }
+    .officials{
+        max-width: 100%;
+        padding: 10px;
+        margin: 20px auto;
+    }
+    .member-officials h2{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .member-officials p{
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    #sp_members {
+        width: 95%;
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+    .member-cards-container {
+        gap: 15px;
+    }
+    .sp_member-cards {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .member-image {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .member-info h3 {
+        font-size: 1rem;
+    }
+
+    .member-info p,
+    .member-info .position {
+        font-size: 0.85rem;
+    }
+    /*ordinance page*/
+    .main-ordinance{
+        padding-top: 220px;
+        margin: 10px auto;
+    }
+    .search-ordinance input {
+        width: 90%;
+        font-size: 14px;
+        height: 30px;
+    }
+    .ordinance-list {
+        padding: 15px;
+        gap: 15px;
+    }
+    .ordinace-card{
+        width: 100%;
+        padding: 15px;
+    }
+    .ordinance-card h3 {
+        font-size: 1.1rem;
+    }
+    .ordinance-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    .ordinance-card button {
+        font-size: 0.9rem;
+        padding: 7px 15px;
+    }
+    /*main news page*/
+    .main-news {
+        padding-top: 220px;
+        margin: 10px auto;
+    }
+    .search-news input {
+        width: 90%;
+        font-size: 14px;
+        height: 30px;
+    }
+    .news-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        padding: 15px;
+    }
+    .news-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+    .news-content {
+        width: 100%;
+        padding: 0;
+        text-align: left;
+    }
+    .news-content h3 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .news-content .news-date {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .news-content p {
+        font-size: 0.9rem;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    .news-content button {
+        display: block;
+        margin: 15px auto 0 auto;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    /*main events page*/
+    .main {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-top: 220px;
+    }
+    .main-events {
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+    }
+    .calendar-events {
+        width: 100%;
+        max-width: 100%;
+    }
+    .calendar-events {
+        width: 100%;
+        max-width: 100%;
+    }
+    .schedule-container {
+        width: 100%;
+        padding: 15px;
+    }
+    .schedule-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .agenda-content {
+        max-height: 100px;
+        overflow-y: auto;
+        font-size: 0.9rem;
+    }
+
+    .agenda-content::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .agenda-content::-webkit-scrollbar-thumb {
+        background: #b3b3b3;
+        border-radius: 4px;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
     }
 }
