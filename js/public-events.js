@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function(){
+//calendar rendering
+function initializeCalendar(){
     const monthYearEvents = document.getElementById("month-year-events");
     const daysContainerEvents = document.getElementById("days-events");
     const leftBtnEvents = document.getElementById("angle-left-events");
@@ -69,9 +70,9 @@ document.addEventListener('DOMContentLoaded', function(){
     });
     
     renderCalendarEvents(currentDateEvents);
-});
+};
 
-document.addEventListener('DOMContentLoaded', function(){
+function initAgendaToggles(){
     const agendaContainers = document.querySelectorAll(".agenda-container");
     agendaContainers.forEach(container =>{
         const toggleBtn = container.querySelector(".toggle-btn");
@@ -86,6 +87,59 @@ document.addEventListener('DOMContentLoaded', function(){
             } else {
                 toggleBtn.classList.replace("fa-solid fa-angle-down", "fa-solid fa-angle-right");
             }
-        })
-    })
+        });
+    });
+};
+
+// Helper: format time nicely
+function formatTime(time) {
+    if (!time) return "N/A";
+    try {
+        return new Date(`1970-01-01T${time}`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    } catch {
+        return time;
+    }
+}
+
+console.log("Public events script loaded");
+
+document.addEventListener("DOMContentLoaded", function(){
+    loadEvents();
+    initializeCalendar();
 });
+
+async function loadEvents(){
+    try{
+        const res = await fetch("http://localhost:3000/api/public/events");
+        const events = await res.json();
+
+        const container = document.getElementById("scheduleContainer");
+        container.innerHTML = "";
+
+        events.forEach(event => {
+            container.innerHTML += `
+                
+                <h3>${event.title}</h3>
+                <div class="schedule-info">
+                    <p><strong>Date:</strong> ${new Date(event.date).toLocaleDateString()}</p>
+                    <p><strong>Time:</strong> ${formatTime(event.time)}</p>
+                    <p><strong>Venue:</strong> ${event.place}</p>
+                </div>
+                <div class="agenda-container">
+                    <div class="agenda-header">
+                        <h4>Agenda</h4>
+                        <i class="fa-solid fa-angle-right toggle-btn"></i>
+                    </div>
+                    <div class="agenda-content">
+                        <p>${event.agenda}</p>
+                    </div>
+                </div>
+                
+            `;
+        });
+        // Enable toggle functionality after inserting new content
+        initAgendaToggles();
+    }catch(error){
+        console.error("Error loading events:", error);
+    }
+}

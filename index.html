@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBR Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="icon" type="image/x-icon" href="images/sp.ico">
 </head>
 <body>
@@ -17,67 +17,8 @@
     <main>
         <section class="news-container">
             <div id="carosel" class="carosel">
-                <!-- Slide 1 -->
-                <div class="slide fade">
-                    <div class="img-side">
-                        <img src="images/android.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3 class="script-title">CITY ORDINACE UPDATES</h3>
-                        <p class="date"><i>2025-11-13</i></p>
-                        <p class="script">The City of Cabadbaran recently passed new environmental initiatives promoting sustainable waste management.</p>
-                        <button class="read-btn">Read More</button>
-                        <div class="btn">
-                            <div id="prev" class="btn-icon prev" title="previous button">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </div>
-                            <div id="next" class="btn-icon next" title="next button">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="slide fade">
-                    <div class="img-side">
-                        <img src="images/guko.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3 class="script-title">Upcoming Festival</h3>
-                        <p class="date"><i>2025-11-9</i></p>
-                        <p class="script">Join us for the annual Cabadbaran Cultural Festival showcasing local talent and traditions.</p>
-                        <button class="read-btn">Read More</button>
-                        <div class="btn">
-                            <div id="prev" class="btn-icon prev" title="previous button">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </div>
-                            <div id="next" class="btn-icon next" title="next button">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="slide fade">
-                    <div class="img-side">
-                        <img src="images/trunks.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3 class="script-title">Community News</h3>
-                        <p class="date"><i>2025-11-11</i></p>
-                        <p class="script">Stay up to date with the latest ordinances, events, and announcements from the City of Cabadbaran.</p>
-                        <button class="read-btn">Read More</button>
-                        <div class="btn">
-                            <div id="prev" class="btn-icon prev" title="previous button">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </div>
-                            <div id="next" class="btn-icon next" title="next button">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <!--Dynamic news slides-->
+                
         </section>
         <aside class="meetings">
             <h3 class="calendar-text">CALENDAR</h3>
@@ -119,74 +60,12 @@
                 </iframe>
             </div>
         </section>
-        <!--
-        <aside class="meetings">
-            <h3>Calendar</h3>
-        </aside>-->
         <article class="ordinance">
             <h3 class="ordinance-text">ORDINACES</h3>
             <div id="carosel-ordinance" class="carosel-ordinance">
-                <div class="ordinance-grid">
-                    <div class="ordinance-slide">
-                        <div class="cards">
-                            <h4 class="ordinance-title">Lorem Ipsum</h4>
-                            <p class="ordinace-date">2025-02-15</p>
-                            <p class="ordinance-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod risus id tortor aliquet, id tincidunt quam luctus.
-                                Integer nec varius lectus. Nulla facilisi. Vivamus tempor, purus ac accumsan feugiat, lacus tortor interdum mi, vel varius libero justo et risus. Donec vitae ante vel lacus faucibus imperdiet.
-                                Suspendisse potenti. Phasellus ut augue a eros gravida ultricies vitae id magna. Mauris rutrum purus at risus varius, quis cursus lorem ultricies. Cras ac ullamcorper lectus, sit amet pretium odio.
-                            </p>
-                            <button class="ordinance-btn">Read More</button>
-                        </div>
-                    </div>
-                    <div class="ordinance-slide">
-                        <div class="cards">
-                            <h3 class="ordinance-title">Lorem Ipsum</h3>
-                            <p class="ordinace-date">2025-11-17</p>
-                            <p class="ordinance-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod risus id tortor aliquet, id tincidunt quam luctus.
-                                Integer nec varius lectus. Nulla facilisi. Vivamus tempor, purus ac accumsan feugiat, lacus tortor interdum mi, vel varius libero justo et risus. Donec vitae ante vel lacus faucibus imperdiet.</p>
-                            <button class="ordinance-btn">Read More</button>
-                        </div>
-                    </div>
-                    <div class="ordinance-slide">
-                        <div class="cards">
-                            <h3 class="ordinance-title">Lorem Ipsum</h3>
-                            <p class="ordinace-date">2025-09-29</p>
-                            <p class="ordinance-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
-                                Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
-                            <button class="ordinance-btn">Read More</button>
-                        </div>
-                    </div>
-                    <div class="ordinance-slide">
-                        <div class="cards">
-                            <h3 class="ordinance-title">Lorem Ipsum</h3>
-                            <p class="ordinace-date">2025-08-29</p>
-                            <p class="ordinance-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
-                                Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
-                            <button class="ordinance-btn">Read More</button>
-                        </div>
-                    </div>
-                    <div class="ordinance-slide">
-                        <div class="cards">
-                            <h3 class="ordinance-title">Lorem Ipsum</h3>
-                            <p class="ordinace-date">2024-07-29</p>
-                            <p class="ordinance-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
-                                Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
-                            <button class="ordinance-btn">Read More</button>
-                        </div>
-                    </div>
-                    <div class="ordinance-slide">
-                        <div class="cards">
-                            <h3 class="ordinance-title">Lorem Ipsum</h3>
-                            <p class="ordinace-date">2024-07-30</p>
-                            <p class="ordinance-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum risus vel leo aliquet, in sollicitudin justo rutrum. Sed vulputate augue in sapien convallis interdum.
-                                Pellentesque ac urna eget felis viverra convallis. Aliquam scelerisque, mauris eget pretium posuere, ipsum nunc blandit nibh, ut convallis metus sem eget tortor. Sed at erat eget arcu mollis feugiat.</p>
-                            <button class="ordinance-btn">Read More</button>
-                        </div>
-                    </div>
+                <div class="ordinance-grid" id="ordinanceGrid">
+                    <!--Dynamic ordinance slide-->
+                    
                 </div>
                 <div class="ordinanceBtn ord-prev" id="ord-prev">
                     <i class="fa-solid fa-angle-left"></i>
@@ -234,7 +113,7 @@
     </main>
     <!--footer.html-->
     <div id="footer-placeholder"></div>
-    <script src="common.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/public-script.js" defer></script>
 </body>
 </html>

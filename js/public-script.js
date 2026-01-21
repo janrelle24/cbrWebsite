@@ -1,4 +1,81 @@
+console.log("Public script loaded");
+
 document.addEventListener("DOMContentLoaded", () =>{
+    loadCarouselNews();
+    loadOrdinances();
+    initializeCalendar ();
+});
+//load news for carousel
+async function loadCarouselNews(){
+    try{
+        const res = await fetch("http://localhost:3000/api/public/news");
+        const news = await res.json();
+
+        const carosel = document.getElementById("carosel");
+        carosel.innerHTML = "";
+
+        news.slice(0,3).forEach(item =>{
+            carosel.innerHTML += `
+                <div class="slide fade">
+                    <div class="img-side">
+                        <img src="http://localhost:3000${item.image}" alt="${item.title}">
+                    </div>
+                    <div class="content">
+                        <h3 class="script-title">${item.title}</h3>
+                        <p class="date"><i>${new Date(item.date).toLocaleDateString()}</i></p>
+                        <p class="script">${item.content.substring(0, 200)}...</p>
+                        <button class="read-btn" onclick="viewNews('${item._id}')">Read More</button>
+                        <div class="btn">
+                            <div id="prev" class="btn-icon prev" title="previous button">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </div>
+                            <div id="next" class="btn-icon next" title="next button">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        initializeNewsCarousel();
+    }catch(error){
+        console.error("Failed to load carousel news", error);
+    }
+}
+async function loadOrdinances(){
+    try{
+        const res = await fetch("http://localhost:3000/api/public/ordinance");
+        const ordinances = await res.json();
+
+        const grid = document.getElementById("ordinanceGrid");
+        grid.innerHTML = "";
+
+        ordinances.forEach(item =>{
+            grid.innerHTML += `
+                <div class="ordinance-slide">
+                    <div class="cards">
+                        <h4 class="ordinance-title">${item.title}</h4>
+                        <p class="ordinace-date">${new Date(item.date).toLocaleDateString()}</p>
+                        <p class="ordinance-content">${item.content.substring(0, 250)}...</p>
+                        <button class="ordinance-btn" onclick="viewOrdinance('${item._id}')">Read More</button>
+                    </div>
+                </div>
+            `;
+        });
+        initializeOrdinanceCarousel();
+    }catch(error){
+        console.error("Failed to load ordinances", error);
+    }
+}
+function viewNews(id) {
+    window.location.href = `news-view.html?id=${id}`;
+}
+
+function viewOrdinance(id) {
+    window.location.href = `ordinance-view.html?id=${id}`;
+}
+
+function initializeNewsCarousel (){
     let slideIndex = 0;
     const slides = document.querySelectorAll(".carosel .slide");
     const prevBtn = document.querySelectorAll(".prev");
@@ -24,9 +101,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     // Auto slide every 4 seconds
     showSlide(slideIndex);
     setInterval(nextSlide, 4000);
-});
+};
 
-document.addEventListener("DOMContentLoaded", () =>{
+function initializeCalendar (){
     const monthYear = document.getElementById("month-year");
     const daysContainer = document.getElementById("days");
     const leftBtn = document.getElementById("angle-left");
@@ -97,9 +174,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     });
 
     renderCalendar(currentDate);
-});
+};
 
-document.addEventListener("DOMContentLoaded", () =>{
+function initializeOrdinanceCarousel () {
     let ordSlideIndex = 0;
     const ordSlides = document.querySelectorAll(".ordinance-grid .ordinance-slide");
     const ordPrevBtn = document.getElementById("ord-prev");
@@ -141,5 +218,5 @@ document.addEventListener("DOMContentLoaded", () =>{
     showOrdSlide(ordSlideIndex);
     setInterval(nextOrdSlide, 5000);
     
-});
+};
 
