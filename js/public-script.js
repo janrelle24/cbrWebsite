@@ -3,6 +3,8 @@ console.log("Public script loaded");
 document.addEventListener("DOMContentLoaded", () =>{
     loadCarouselNews();
     loadOrdinances();
+    loadMembers();
+    loadLiveStream();
     initializeCalendar ();
 });
 //load news for carousel
@@ -73,6 +75,58 @@ function viewNews(id) {
 
 function viewOrdinance(id) {
     window.location.href = `ordinance-view.html?id=${id}`;
+}
+async function loadMembers(){
+    try{
+        const res = await fetch("http://localhost:3000/api/public/members");
+        const members = await res.json();
+
+        const memberWrapper = document.getElementById("memberWrapper");
+        memberWrapper.innerHTML = "";
+        members.forEach(item => {
+            memberWrapper.innerHTML += `
+                <div class="member-card">
+                    <img src="http://localhost:3000${item.image}" alt="${item.name}">
+                    <div class="member-desc">${item.name} - ${item.position}</div>
+                </div>
+            `;
+        } );
+    }catch(error){
+        console.error("Failed to load members", error);
+    }
+}
+async function loadLiveStream(){
+    try{
+        const res = await fetch("http://localhost:3000/api/public/live");
+        const lives = await res.json();
+        const liveStreamContainer = document.getElementById("liveStreamContainer");
+
+        if (!lives.length) {
+            liveStreamContainer.innerHTML = "<p>No live stream available at the moment.</p>";
+            return;
+        }
+        // Get the most recent livestream
+        const live = lives[0];
+        let embedUrl = live.embedUrl;
+
+        // Convert watch URL → embed URL if needed
+        if(embedUrl.includes("watch?v=")){
+            embedUrl = embedUrl.replace("watch?v=", "embed/");
+        }
+
+        liveStreamContainer.innerHTML = `
+            <iframe 
+                src="${embedUrl}?&autoplay=1&mute=1"
+                title="${live.title || 'Live Stream'}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        `;
+    }catch(error){
+        console.error("Failed to load livestream", error);
+        const liveStreamContainer = document.getElementById("liveStreamContainer");
+        liveStreamContainer.innerHTML = "<p>Live stream is currently unavailable.</p>";
+    }
 }
 
 function initializeNewsCarousel (){
