@@ -292,6 +292,9 @@ body {
 }
 .days{
     height: 240px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
 }
 .weekdays div, .days div{
     width: 14.28%;
@@ -301,6 +304,16 @@ body {
 }
 .days div{
     cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Allow the number and dot to stack */
+    font-size: 16px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .days div:hover{
@@ -318,6 +331,16 @@ body {
 .days .fade{
     color: #8c8a89;
 
+}
+.event-dot{
+    height: 6px;
+    width: 6px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 /*end meeting container*/
 
@@ -1038,6 +1061,9 @@ iframe:hover{
 }
 .days-events{
     height: 240px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
 }
 .weekdays-events div, .days-events div{
     width: 14.28%;
@@ -1047,6 +1073,17 @@ iframe:hover{
 }
 .days-events div{
     cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Allow the number and dot to stack */
+    font-size: 16px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
 }
 .days-events div:hover{
     background-color: #2e2d2d;

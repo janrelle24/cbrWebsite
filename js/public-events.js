@@ -1,3 +1,11 @@
+const eventDates = new Set();
+
+console.log("Public events script loaded");
+function formatDate(year, month, day){
+    const m = String(month).padStart(2, "0");
+    const d = String(day).padStart(2, "0");
+    return `${year}-${m}-${d}`;
+}
 //calendar rendering
 function initializeCalendar(){
     const monthYearEvents = document.getElementById("month-year-events");
@@ -38,6 +46,13 @@ function initializeCalendar(){
             dayDiv.textContent = i;
             if(i === todayEvents.getDate() && month === todayEvents.getMonth() && year === todayEvents.getFullYear()){
                 dayDiv.classList.add('today-events');
+            }
+            //add dot if there is an event on that day
+            const thisDate = formatDate(year, month + 1, i); 
+            if(eventDates.has(thisDate)){
+                const eventDot = document.createElement('span');
+                eventDot.classList.add('event-dot');
+                dayDiv.appendChild(eventDot);
             }
             daysContainerEvents.appendChild(dayDiv);
         }
@@ -103,8 +118,8 @@ function formatTime(time) {
 
 console.log("Public events script loaded");
 
-document.addEventListener("DOMContentLoaded", function(){
-    loadEvents();
+document.addEventListener("DOMContentLoaded", async function(){
+    await loadEvents();
     initializeCalendar();
 });
 
@@ -117,6 +132,14 @@ async function loadEvents(){
         container.innerHTML = "";
 
         events.forEach(event => {
+            const eventDate = new Date(event.date);
+            // Store as "YYYY-M-D" to match renderCalendar() check
+            const formattedDate = formatDate(
+                eventDate.getFullYear(),
+                eventDate.getMonth() + 1,
+                eventDate.getDate()
+            );
+            eventDates.add(formattedDate);
             container.innerHTML += `
                 
                 <h3>${event.title}</h3>
@@ -137,6 +160,7 @@ async function loadEvents(){
                 
             `;
         });
+        console.log("Loaded event dates:", [...eventDates]);
         // Enable toggle functionality after inserting new content
         initAgendaToggles();
     }catch(error){

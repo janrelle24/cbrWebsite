@@ -1,12 +1,22 @@
+const eventDates = new Set();
 console.log("Public script loaded");
 
-document.addEventListener("DOMContentLoaded", () =>{
-    loadCarouselNews();
-    loadOrdinances();
-    loadMembers();
-    loadLiveStream();
+document.addEventListener("DOMContentLoaded", async() =>{
+    await Promise.all([
+        loadCarouselNews(),
+        loadOrdinances(),
+        loadMembers(),
+        loadLiveStream(),
+        loadEventDates(),
+    ]);
+    
     initializeCalendar ();
 });
+function formatDate(year, month, day){
+    const m = String(month).padStart(2, "0");
+    const d = String(day).padStart(2, "0");
+    return `${year}-${m}-${d}`;
+}
 //load news for carousel
 async function loadCarouselNews(){
     try{
@@ -128,6 +138,26 @@ async function loadLiveStream(){
         liveStreamContainer.innerHTML = "<p>Live stream is currently unavailable.</p>";
     }
 }
+async function loadEventDates(){
+    try{
+        const res = await fetch("http://localhost:3000/api/public/events");
+        const events = await res.json();
+
+        events.forEach(event => {
+            const eventDate = new Date(event.date);
+            // Store as "YYYY-M-D" to match renderCalendar() check
+            const formattedDate = formatDate(
+                eventDate.getFullYear(),
+                eventDate.getMonth() + 1,
+                eventDate.getDate()
+            );
+            eventDates.add(formattedDate);
+        });
+        console.log("Loaded event dates:", [...eventDates]);
+    }catch(error){
+        console.error("Failed to load events", error);
+    }
+}
 
 function initializeNewsCarousel (){
     let slideIndex = 0;
@@ -171,6 +201,7 @@ function initializeCalendar (){
     ];
     let currentDate =new Date();
     let today = new Date();
+    
 
     function renderCalendar(date){
         const year = date.getFullYear();
@@ -197,6 +228,14 @@ function initializeCalendar (){
             if(i === today.getDate() && month === today.getMonth() && year === today.getFullYear()){
                 dayDiv.classList.add('today');
             }
+            //add dot if there is an event on that day
+            const thisDate = formatDate(year, month + 1, i); 
+            if(eventDates.has(thisDate)){
+                const eventDot = document.createElement('span');
+                eventDot.classList.add('event-dot');
+                dayDiv.appendChild(eventDot);
+            }
+
             daysContainer.appendChild(dayDiv);
         }
         //next months date
