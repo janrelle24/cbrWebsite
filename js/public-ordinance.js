@@ -1,3 +1,4 @@
+console.log(" Public ordinance script loaded");
 document.addEventListener("DOMContentLoaded", loadPublicOrdinance);
 
 async function loadPublicOrdinance(){
@@ -24,4 +25,8 @@ async function loadPublicOrdinance(){
     }catch(error){
         console.error("Failed to load public ordinance", error);
     }
+}
+
+function viewOrdinance(id) {
+    window.location.href = `ordinance-view.html?id=${id}`;
 }
