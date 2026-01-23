@@ -39,8 +39,20 @@ function renderMembers(members, filter){
                 <p class="achievements">Achievements: ${member.achievements}</p>
             </div>
         `;
+        //make image clickable
+        
+        const imageDiv = card.querySelector(".member-image");
+        imageDiv.style.cursor = "pointer";
+        imageDiv.addEventListener("click", () => {
+            viewMember(member._id);
+        });
         container.appendChild(card);
     });
+}
+// Redirect to detailed view
+
+function viewMember(id) {
+    window.location.href = `sp_member-view.html?id=${id}`;
 }
 
 //helper: format birth date nicely (e.g. "January 23, 1998")
