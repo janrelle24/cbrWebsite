@@ -34,11 +34,28 @@ function renderMembers(members, filter){
             <div class="member-info">
                 <h3>${member.name}</h3>
                 <p class="position">${member.position}</p>
-                <p class="bdate">Birthdate: ${member.birthDate}</p>
+                <p class="bdate">Birthdate: ${formatBirthDate(member.birthDate)}</p>
                 <p class="education">Education: ${member.education}</p>
                 <p class="achievements">Achievements: ${member.achievements}</p>
             </div>
         `;
         container.appendChild(card);
     });
+}
+
+//helper: format birth date nicely (e.g. "January 23, 1998")
+function formatBirthDate(dateString){
+    if(!dateString) return "N/A";
+    try{
+        const date = new Date(dateString);
+        //check if the date is valid
+        if(isNaN(date)) return "Invalid Date";
+        return date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+    }catch{
+        return dateString;
+    }
 }
