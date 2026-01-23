@@ -281,6 +281,7 @@
         margin: 15px auto;
     }
     /* Search Bar */
+    /*
     .search-ordinance{
         width: 100%;
         justify-content: center;
@@ -296,7 +297,8 @@
         height: 34px;
         width: 40px;
         font-size: 15px;
-    }
+    }*/
+
     /* Ordinance List */
     .ordinance-list {
         padding: 25px;

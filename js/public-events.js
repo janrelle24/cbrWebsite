@@ -1,6 +1,8 @@
 const eventDates = new Set();
 
 console.log("Public events script loaded");
+let allEvents = [];
+
 function formatDate(year, month, day){
     const m = String(month).padStart(2, "0");
     const d = String(day).padStart(2, "0");
@@ -127,43 +129,63 @@ async function loadEvents(){
     try{
         const res = await fetch("http://localhost:3000/api/public/events");
         const events = await res.json();
-
-        const container = document.getElementById("scheduleContainer");
-        container.innerHTML = "";
-
-        events.forEach(event => {
-            const eventDate = new Date(event.date);
-            // Store as "YYYY-M-D" to match renderCalendar() check
-            const formattedDate = formatDate(
-                eventDate.getFullYear(),
-                eventDate.getMonth() + 1,
-                eventDate.getDate()
+        allEvents = events;
+        renderEvents(allEvents);
+        // Search functionality
+        const searchEvents = document.getElementById("searchEvents");
+        searchEvents.addEventListener("input", function(){
+            const query = this.value.toLowerCase();
+            const filtered = allEvents.filter(item =>
+                item.title.toLowerCase().includes(query) 
             );
-            eventDates.add(formattedDate);
-            container.innerHTML += `
-                
-                <h3>${event.title}</h3>
-                <div class="schedule-info">
-                    <p><strong>Date:</strong> ${new Date(event.date).toLocaleDateString()}</p>
-                    <p><strong>Time:</strong> ${formatTime(event.time)}</p>
-                    <p><strong>Venue:</strong> ${event.place}</p>
-                </div>
-                <div class="agenda-container">
-                    <div class="agenda-header">
-                        <h4>Agenda</h4>
-                        <i class="fa-solid fa-angle-right toggle-btn"></i>
-                    </div>
-                    <div class="agenda-content">
-                        <p>${event.agenda}</p>
-                    </div>
-                </div>
-                
-            `;
+            renderEvents(filtered);
+            initAgendaToggles();
         });
+        
         console.log("Loaded event dates:", [...eventDates]);
         // Enable toggle functionality after inserting new content
-        initAgendaToggles();
+        
     }catch(error){
         console.error("Error loading events:", error);
     }
+}
+
+function renderEvents(events){
+    const container = document.getElementById("scheduleContainer");
+    container.innerHTML = "";
+
+    if (events.length === 0) {
+        container.innerHTML = "<p>No events found.</p>";
+        return;
+    }
+
+    events.forEach(event => {
+        const eventDate = new Date(event.date);
+        // Store as "YYYY-M-D" to match renderCalendar() check
+        const formattedDate = formatDate(
+            eventDate.getFullYear(),
+            eventDate.getMonth() + 1,
+            eventDate.getDate()
+        );
+        eventDates.add(formattedDate);
+        container.innerHTML += `
+            
+            <h3>${event.title}</h3>
+            <div class="schedule-info">
+                <p><strong>Date:</strong> ${new Date(event.date).toLocaleDateString()}</p>
+                <p><strong>Time:</strong> ${formatTime(event.time)}</p>
+                <p><strong>Venue:</strong> ${event.place}</p>
+            </div>
+            <div class="agenda-container">
+                <div class="agenda-header">
+                    <h4>Agenda</h4>
+                    <i class="fa-solid fa-angle-right toggle-btn"></i>
+                </div>
+                <div class="agenda-content">
+                    <p>${event.agenda}</p>
+                </div>
+            </div>
+            
+        `;
+    });
 }
