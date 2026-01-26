@@ -1,7 +1,11 @@
 const eventDates = new Set();
 
 console.log("Public events script loaded");
+
 let allEvents = [];
+let filtered = [];
+let currentPage = 1;
+const ITEMS_PER_PAGE = 5;
 
 function formatDate(year, month, day){
     const m = String(month).padStart(2, "0");
@@ -129,18 +133,27 @@ async function loadEvents(){
     try{
         const res = await fetch("http://localhost:3000/api/public/events");
         const events = await res.json();
+
         allEvents = events;
-        renderEvents(allEvents);
+        filtered = events
+        renderEvents();
+        updatePaginationButtons();
+
         // Search functionality
         const searchEvents = document.getElementById("searchEvents");
         searchEvents.addEventListener("input", function(){
             const query = this.value.toLowerCase();
-            const filtered = allEvents.filter(item =>
+            filtered = allEvents.filter(item =>
                 item.title.toLowerCase().includes(query) 
             );
-            renderEvents(filtered);
-            initAgendaToggles();
+            currentPage = 1;
+            renderEvents();
+            updatePaginationButtons();
+            //initAgendaToggles();
         });
+        // PREV / NEXT
+        document.getElementById("prevBtn").addEventListener("click", prevPage);
+        document.getElementById("nextBtn").addEventListener("click", nextPage);
         
         console.log("Loaded event dates:", [...eventDates]);
         // Enable toggle functionality after inserting new content
@@ -150,16 +163,20 @@ async function loadEvents(){
     }
 }
 
-function renderEvents(events){
+function renderEvents(){
     const container = document.getElementById("scheduleContainer");
     container.innerHTML = "";
 
-    if (events.length === 0) {
+    if (filtered.length === 0) {
         container.innerHTML = "<p>No events found.</p>";
         return;
     }
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageItems = filtered.slice(start, end);
 
-    events.forEach(event => {
+
+    pageItems.forEach(event => {
         const eventDate = new Date(event.date);
         // Store as "YYYY-M-D" to match renderCalendar() check
         const formattedDate = formatDate(
@@ -188,4 +205,33 @@ function renderEvents(events){
             
         `;
     });
+    initAgendaToggles();
+}
+
+// Pagination controls 
+function prevPage(){
+    if(currentPage > 1){
+        currentPage--;
+        renderEvents();
+        updatePaginationButtons();
+    }
+}
+
+function nextPage(){
+    const maxPage = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+    if(currentPage < maxPage){
+        currentPage++;
+        renderEvents();
+        updatePaginationButtons();
+    }
+}
+
+// Enable / Disable buttons 
+function updatePaginationButtons(){
+    const maxPage = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+    document.getElementById("prevBtn").disabled = currentPage === 1;
+    document.getElementById("nextBtn").disabled = currentPage === maxPage;
+
+    //page number indicator
+    document.getElementById("pageIndicator").textContent = `Page ${currentPage} of ${maxPage || 1}`;
 }
