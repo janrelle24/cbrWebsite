@@ -21,8 +21,7 @@
     /*menu*/
     .menu{
         margin: 0;
-        /*padding: 0;*/
-        padding: 60px 0 0 0; /* Add space at the top for hamburger */
+        padding: 60px 0 0 0; 
         width: 350px;
         height: 100vh;
         position: fixed;
@@ -34,8 +33,8 @@
         z-index: 1000;
         flex-direction: column;
         display: flex;
-        align-items: flex-start;   /* keep links aligned to left */
-        justify-content: flex-start; /* ensure links start at top */
+        align-items: flex-start;   
+        justify-content: flex-start; 
     }
     .menu a {
         margin: 10px;
@@ -55,7 +54,6 @@
     }
     /* Hamburger Button */
     .hamburger {
-        /*position: fixed;*/
         position: absolute;
         top: 20px;
         right: 20px;
@@ -276,28 +274,9 @@
     /* end sp_member responsive*/
     /*start main ordinance responsive*/
     .main-ordinance{
-        padding-top: 300px;
-        /*padding: 20px;*/
+        padding-top: 250px;
         margin: 15px auto;
     }
-    /* Search Bar */
-    /*
-    .search-ordinance{
-        width: 100%;
-        justify-content: center;
-        float: none;
-    }
-    .search-ordinance input{
-        width: 80%;
-        font: 15px;
-        max-width: 450px;
-        height: 32px;
-    }
-    .search-ordinance-btn{
-        height: 34px;
-        width: 40px;
-        font-size: 15px;
-    }*/
 
     /* Ordinance List */
     .ordinance-list {
@@ -327,26 +306,10 @@
     /*end main ordinance responsive*/
     /*start main news responsive*/
     .main-news{
-        padding-top: 300px;
-        /*padding: 20px;*/
+        padding-top: 250px;
         margin: 15px auto;
     }
-    .search-news{
-        width: 100%;
-        justify-content: center;
-        float: none;
-    }
-    .search-news input{
-        width: 80%;
-        font: 15px;
-        max-width: 450px;
-        height: 32px;
-    }
-    .search-news-btn{
-        height: 34px;
-        width: 40px;
-        font-size: 15px;
-    }
+    
     .news-list{
         padding: 25px;
         gap: 20px;
@@ -435,8 +398,7 @@
     /* Schedule section full width */
     .schedule-events {
         width: 100%;
-        margin-top: 20px;
-        padding: 20px;
+        top: 0;
     }
 
     /* Adjust header layout */
@@ -478,6 +440,29 @@
     .agenda-content::-webkit-scrollbar-thumb {
         background: #9b9b9b;
         border-radius: 4px;
+    }
+    .prev-and-next {
+        gap: 30px;
+    }
+
+    .pagination-btn {
+        padding: 9px 18px;
+        font-size: 0.95rem;
+    }
+
+    .page-indicator {
+        padding: 6px 14px;
+        font-size: 0.95rem;
+    }
+    .search {
+        float: none;
+        margin-top: 20px;
+        padding: 6px 12px;
+    }
+
+    .search input {
+        width: 380px;
+        font-size: 15px;
     }
     /*end main events responsive*/
 }
@@ -530,7 +515,7 @@
         position: absolute;
         top: 15px;
         right: 15px;
-        font-size: 26px; /* slightly larger for mobile */
+        font-size: 26px; 
         background-color: #ed0524;
         color: #fff;
         border: none;
@@ -735,14 +720,10 @@
     }
     /*ordinance page*/
     .main-ordinance{
-        padding-top: 220px;
+        padding-top: 200px;
         margin: 10px auto;
     }
-    .search-ordinance input {
-        width: 90%;
-        font-size: 14px;
-        height: 30px;
-    }
+    
     .ordinance-list {
         padding: 15px;
         gap: 15px;
@@ -764,14 +745,10 @@
     }
     /*main news page*/
     .main-news {
-        padding-top: 220px;
+        padding-top: 200px;
         margin: 10px auto;
     }
-    .search-news input {
-        width: 90%;
-        font-size: 14px;
-        height: 30px;
-    }
+    
     .news-card {
         flex-direction: column;
         align-items: center;
@@ -829,6 +806,10 @@
         width: 100%;
         max-width: 100%;
     }
+    .schedule-events {
+        width: 100%;
+        top: 0;
+    }
     .schedule-container {
         width: 100%;
         padding: 15px;
@@ -863,6 +844,37 @@
 
     button {
         font-size: 0.9rem;
+    }
+    .prev-and-next {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .pagination-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .pagination-btn i {
+        font-size: 1rem;
+    }
+
+    .page-indicator {
+        font-size: 0.9rem;
+    }
+    .search {
+        float: none;
+        margin: 16px auto;
+        width: 90%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        z-index: 5;
+    }
+
+    .search input {
+        width: 100%;
+        font-size: 15px;
     }
 }
 @media (max-width: 480px){
@@ -910,7 +922,6 @@
         flex-direction: column;
         text-align: center;
         padding-top: 0;
-        /*padding: 10px;*/
     }
     .img-side img {
         height: 35vh;
@@ -948,6 +959,10 @@
         height: 200px;
     }
     /* ordinance section*/
+    .main-ordinance{
+        padding-top: 150px;
+        margin: 8px auto;
+    }
     .ordinance {
         width: 100%;
         margin: 10px auto;
@@ -1011,7 +1026,8 @@
     }
     /*news page*/
     .main-news {
-        padding-top: 180px;
+        padding-top: 150px;
+        margin: 8px auto;
     }
 
     .news-card {
@@ -1046,6 +1062,10 @@
     .calendar-events {
         max-width: 100%;
         padding: 10px;
+    }
+    .schedule-events {
+        width: 100%;
+        top: 0;
     }
 
     .schedule-container {
@@ -1110,5 +1130,39 @@
 
     button {
         font-size: 0.85rem;
+    }
+    .prev-and-next {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .pagination-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 10px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .page-indicator {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+    .search {
+        width: 100%;
+        margin: 12px auto;
+        padding: 6px 10px;
+        border-radius: 20px;
+        z-index: 10;
+    }
+
+    .search input {
+        font-size: 14px;
+        padding: 6px 4px;
+    }
+
+    .search i {
+        font-size: 16px;
     }
 }

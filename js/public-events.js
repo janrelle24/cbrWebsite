@@ -149,7 +149,6 @@ async function loadEvents(){
             currentPage = 1;
             renderEvents();
             updatePaginationButtons();
-            //initAgendaToggles();
         });
         // PREV / NEXT
         document.getElementById("prevBtn").addEventListener("click", prevPage);

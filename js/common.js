@@ -33,7 +33,7 @@ function initSidebarMenu() {
     const hamburger = document.getElementById("hamburger-btn");
     const overlay = document.getElementById("overlay");
 
-    // ✅ Only attach listeners if elements exist
+    // Only attach listeners if elements exist
     if (!sidebar || !hamburger || !overlay) {
         console.warn("Sidebar elements not found. Skipping toggle initialization.");
         return;
