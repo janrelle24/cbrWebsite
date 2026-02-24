@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function(){
             <div class="view-item">
                 <div class="view-title">${news.title}</div>
                 <p class="view-date"><i>${new Date(news.date).toLocaleDateString()}</i></p>
-                <img class="view-image" src="${API_BASE}${news.image}" alt="${news.title}" />
+                <img class="view-image" src="${news.image}" alt="${news.title}" />
                 <div class="view-content">${news.content}</div>
             </div>
         `;

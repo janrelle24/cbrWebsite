@@ -54,7 +54,7 @@ function renderNews(){
     pageItems.forEach(item => {
         container.innerHTML += `
             <div class="news-card">
-                <img src="${API_BASE}${item.image}" class="news-image" alt="${item.title}">
+                <img src="${item.image}" class="news-image" alt="${item.title}">
                 <div class="news-content">
                     <h3>${item.title}</h3>
                     <p class="news-date">

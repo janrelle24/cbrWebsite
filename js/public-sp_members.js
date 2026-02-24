@@ -30,7 +30,7 @@ function renderMembers(members, filter){
         card.classList.add("sp_member-cards");
         card.innerHTML = ` 
             <div class="member-image">
-                <img src="${API_BASE}${member.image}" alt="${member.name}">
+                <img src="${member.image}" alt="${member.name}">
             </div>
             <div class="member-info">
                 <h3>${member.name}</h3>

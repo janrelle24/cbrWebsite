@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         // Render full member details
         document.getElementById("memberContainer").innerHTML = `
             <div class="view-item">
-                <img class="view-image" src="${API_BASE}${member.image}" alt="${member.name}" />
+                <img class="view-image" src="${member.image}" alt="${member.name}" />
                 <h2 class="view-title">${member.name}</h2>
                 <p class="view-date"><strong>Position:</strong> ${member.position}</p>
                 <p><strong>Birthdate:</strong> ${formatBirthDate(member.birthDate)}</p>
