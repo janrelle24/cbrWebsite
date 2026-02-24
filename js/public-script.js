@@ -2,15 +2,20 @@ const eventDates = new Set();
 console.log("Public script loaded");
 
 document.addEventListener("DOMContentLoaded", async() =>{
-    await Promise.all([
-        loadCarouselNews(),
-        loadOrdinances(),
-        loadMembers(),
-        loadLiveStream(),
-        loadEventDates(),
-    ]);
+    try{
+        await Promise.all([
+            loadCarouselNews(),
+            loadOrdinances(),
+            loadMembers(),
+            loadLiveStream(),
+            loadEventDates(),
+        ]);
+        
+        initializeCalendar ();
+    }catch(err){
+        console.error("Error initializing:", err);
+    }
     
-    initializeCalendar ();
 });
 function formatDate(year, month, day){
     const m = String(month).padStart(2, "0");
@@ -20,7 +25,8 @@ function formatDate(year, month, day){
 //load news for carousel
 async function loadCarouselNews(){
     try{
-        const res = await fetch("http://localhost:3000/api/public/news");
+        const res = await fetch(`${API_BASE}/api/public/news`);
+        if(!res.ok) throw new Error("Failed to fetch news");
         const news = await res.json();
 
         const carosel = document.getElementById("carosel");
@@ -30,7 +36,7 @@ async function loadCarouselNews(){
             carosel.innerHTML += `
                 <div class="slide fade">
                     <div class="img-side">
-                        <img src="http://localhost:3000${item.image}" alt="${item.title}">
+                        <img src="${API_BASE}${item.image}" alt="${item.title}">
                     </div>
                     <div class="content">
                         <h3 class="script-title">${item.title}</h3>
@@ -56,7 +62,8 @@ async function loadCarouselNews(){
 }
 async function loadOrdinances(){
     try{
-        const res = await fetch("http://localhost:3000/api/public/ordinance");
+        const res = await fetch(`${API_BASE}/api/public/ordinance`);
+        if(!res.ok) throw new Error("Failed to fetch ordinances");
         const ordinances = await res.json();
 
         const grid = document.getElementById("ordinanceGrid");
@@ -88,7 +95,8 @@ function viewOrdinance(id) {
 }
 async function loadMembers(){
     try{
-        const res = await fetch("http://localhost:3000/api/public/members");
+        const res = await fetch(`${API_BASE}/api/public/members`);
+        if(!res.ok) throw new Error("Failed to fetch members");
         const members = await res.json();
 
         const memberWrapper = document.getElementById("memberWrapper");
@@ -96,7 +104,7 @@ async function loadMembers(){
         members.forEach(item => {
             memberWrapper.innerHTML += `
                 <div class="member-card">
-                    <img src="http://localhost:3000${item.image}" alt="${item.name}">
+                    <img src="${API_BASE}${item.image}" alt="${item.name}">
                     <div class="member-desc">${item.name} - ${item.position}</div>
                 </div>
             `;
@@ -107,7 +115,8 @@ async function loadMembers(){
 }
 async function loadLiveStream(){
     try{
-        const res = await fetch("http://localhost:3000/api/public/live");
+        const res = await fetch(`${API_BASE}/api/public/live`);
+        if(!res.ok) throw new Error("Failed to fetch live stream");
         const lives = await res.json();
         const liveStreamContainer = document.getElementById("liveStreamContainer");
 
@@ -140,7 +149,8 @@ async function loadLiveStream(){
 }
 async function loadEventDates(){
     try{
-        const res = await fetch("http://localhost:3000/api/public/events");
+        const res = await fetch(`${API_BASE}/api/public/events`);
+        if(!res.ok) throw new Error("Failed to fetch events");
         const events = await res.json();
 
         events.forEach(event => {

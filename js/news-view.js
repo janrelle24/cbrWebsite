@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", async function(){
         return;
     }
     try{
-        const res = await fetch(`http://localhost:3000/api/public/news/${newsId}`);
+        const res = await fetch(`${API_BASE}/api/public/news/${newsId}`);
+        if(!res.ok) throw new Error("Failed to fetch news details");
         const news = await res.json();
 
         if (!news) {
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function(){
             <div class="view-item">
                 <div class="view-title">${news.title}</div>
                 <p class="view-date"><i>${new Date(news.date).toLocaleDateString()}</i></p>
-                <img class="view-image" src="http://localhost:3000${news.image}" alt="${news.title}" />
+                <img class="view-image" src="${API_BASE}${news.image}" alt="${news.title}" />
                 <div class="view-content">${news.content}</div>
             </div>
         `;

@@ -131,7 +131,8 @@ document.addEventListener("DOMContentLoaded", async function(){
 
 async function loadEvents(){
     try{
-        const res = await fetch("http://localhost:3000/api/public/events");
+        const res = await fetch(`${API_BASE}/api/public/events`);
+        if(!res.ok) throw new Error("Failed to fetch events");
         const events = await res.json();
 
         allEvents = events;

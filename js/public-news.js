@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", loadPublicNews);
 
 async function loadPublicNews() {
     try{
-        const res = await fetch("http://localhost:3000/api/public/news");
+        const res = await fetch(`${API_BASE}/api/public/news`);
+        if(!res.ok) throw new Error("Failed to fetch news");
+
         const news = await res.json();
 
         allNews = news;
@@ -18,11 +20,10 @@ async function loadPublicNews() {
         updatePaginationButtons();
 
         //add search functionality
-        const searchNews = document.getElementById("searchNews");
-        searchNews.addEventListener("input", function(){
+        document.getElementById("searchNews").addEventListener("input", function () {
             const query = this.value.toLowerCase();
             filtered = allNews.filter(item =>
-                item.title.toLowerCase().includes(query) 
+                item.title.toLowerCase().includes(query)
             );
             currentPage = 1;
             renderNews();
@@ -53,7 +54,7 @@ function renderNews(){
     pageItems.forEach(item => {
         container.innerHTML += `
             <div class="news-card">
-                <img src="http://localhost:3000${item.image}" class="news-image" alt="${item.title}">
+                <img src="${API_BASE}${item.image}" class="news-image" alt="${item.title}">
                 <div class="news-content">
                     <h3>${item.title}</h3>
                     <p class="news-date">

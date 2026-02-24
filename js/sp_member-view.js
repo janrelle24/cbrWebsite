@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
     try {
-        const res = await fetch(`http://localhost:3000/api/public/members/${memberId}`);
+        const res = await fetch(`${API_BASE}/api/public/members/${memberId}`);
+        if(!res.ok) throw new Error("Failed to fetch member details");
         const member = await res.json();
 
         if (!member) {
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         // Render full member details
         document.getElementById("memberContainer").innerHTML = `
             <div class="view-item">
-                <img class="view-image" src="http://localhost:3000${member.image}" alt="${member.name}" />
+                <img class="view-image" src="${API_BASE}${member.image}" alt="${member.name}" />
                 <h2 class="view-title">${member.name}</h2>
                 <p class="view-date"><strong>Position:</strong> ${member.position}</p>
                 <p><strong>Birthdate:</strong> ${formatBirthDate(member.birthDate)}</p>

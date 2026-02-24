@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", loadMembers);
 
 async function loadMembers(){
     try{
-        const res = await fetch("http://localhost:3000/api/public/members");
+        const res = await fetch(`${API_BASE}/api/public/members`);
+        if(!res.ok) throw new Error("Failed to fetch public members");
         const members = await res.json();
 
         renderMembers(members, 'all');
@@ -29,7 +30,7 @@ function renderMembers(members, filter){
         card.classList.add("sp_member-cards");
         card.innerHTML = ` 
             <div class="member-image">
-                <img src="http://localhost:3000${member.image}" alt="${member.name}">
+                <img src="${API_BASE}${member.image}" alt="${member.name}">
             </div>
             <div class="member-info">
                 <h3>${member.name}</h3>

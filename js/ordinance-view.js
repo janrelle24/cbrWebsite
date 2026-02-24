@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", async function(){
     }
 
     try{
-        const res = await fetch(`http://localhost:3000/api/public/ordinance/${ordinanceId}`);
+        const res = await fetch(`${API_BASE}/api/public/ordinance/${ordinanceId}`);
+        if(!res.ok) throw new Error("Failed to fetch ordinance details");
         const ordinance = await res.json();
 
         if (!ordinance) {

@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", loadPublicOrdinance);
 
 async function loadPublicOrdinance(){
     try{
-        const res = await fetch("http://localhost:3000/api/public/ordinance");
+        const res = await fetch(`${API_BASE}/api/public/ordinance`);
+        if(!res.ok) throw new Error("Failed to fetch public ordinance");
         const ordinance = await res.json();
 
         allOrdinance = ordinance;
