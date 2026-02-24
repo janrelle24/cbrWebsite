@@ -36,7 +36,7 @@ async function loadCarouselNews(){
             carosel.innerHTML += `
                 <div class="slide fade">
                     <div class="img-side">
-                        <img src="${API_BASE}${item.image}" alt="${item.title}">
+                        <img src="${item.image}" alt="${item.title}">
                     </div>
                     <div class="content">
                         <h3 class="script-title">${item.title}</h3>
@@ -104,7 +104,7 @@ async function loadMembers(){
         members.forEach(item => {
             memberWrapper.innerHTML += `
                 <div class="member-card">
-                    <img src="${API_BASE}${item.image}" alt="${item.name}">
+                    <img src="${item.image}" alt="${item.name}">
                     <div class="member-desc">${item.name} - ${item.position}</div>
                 </div>
             `;
